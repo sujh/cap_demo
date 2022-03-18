@@ -51,5 +51,5 @@ test:
 production:
   <<: *default
   database: rails_deploy_demo_production
-  username: rails_deploy_demo
-  password: <%= ENV["RAILS_DEPLOY_DEMO_DATABASE_PASSWORD"] %>
+  username: root
+  password: <%= Rails.application.credentials.dig(:production, :db_pass) %>
